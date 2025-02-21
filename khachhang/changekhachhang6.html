@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='../img/logo.png' rel='icon' type='image/x-icon' />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link href="../assets/font/font-awesome-pro-v6-6.2.0/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/admin-responsive.css">
+    <title>Quản lý cửa hàng</title>
+</head>
+
+<body>
+    <header class="header">
+        <button class="menu-icon-btn">
+            <div class="menu-icon">
+                <i class="fa-regular fa-bars"></i>
+            </div>
+        </button>
+    </header>
+    <div class="container">
+        <aside class="sidebar open">
+            <div class="top-sidebar">
+                <a href="#" class="channel-logo"><img src="../img/logo.png" alt="Channel Logo"></a>
+                <div class="hidden-sidebar your-channel"><img src=""
+                        style="height: 30px;" alt="">
+                </div>
+            </div>
+            <div class="middle-sidebar">
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item tab-content ">
+                        <a href="/admin.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-house"></i></div>
+                            <div class="hidden-sidebar">Trang tổng quan</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/sanpham/sanpham.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-thin fa-motorcycle"></i></div>
+                            <div class="hidden-sidebar">Sản phẩm</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content active">
+                        <a href="/khachhang/khachhang.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-users"></i></div>
+                            <div class="hidden-sidebar">Khách hàng</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/donhang/donhang.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-basket-shopping"></i></div>
+                            <div class="hidden-sidebar">Đơn hàng</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/thongkesp/thongke.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-chart-simple"></i></div>
+                            <div class="hidden-sidebar">Thống kê sản phẩm</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/thongkekh/thongkekh.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-chart-simple"></i></div>
+                            <div class="hidden-sidebar">Thống kê khách hàng</div>
+                        </a>
+                    </li>
+                    
+                    <div class="spacer" style="height:50px;width:1px"></div>
+                    <li class="sidebar-list-item user-logout" style="border-top: 2px solid rgba(0,0,0,0.12);">
+                        <a href="index.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-thin fa-circle-chevron-left"></i></div>
+                            <div class="hidden-sidebar">Trang chủ</div>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item user-logout">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-circle-user"></i></div>
+                            <div class="hidden-sidebar" id="name-acc">Admin</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item user-logout">
+                        <a href="#" class="sidebar-link" >
+                            <div class="sidebar-icon"><i class="fa-light fa-arrow-right-from-bracket"></i></div>
+                            <div class="hidden-sidebar" id="logoutacc">Đăng xuất</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+         
+        </aside>
+        <main class="content">
+            
+            
+            <!-- Account  -->
+            <div class="section">
+                <div class="admin-control">
+                    <div class="admin-control-left">
+                        <select name="tinh-trang-user" id="tinh-trang-user" >
+                            <option value="2">Tất cả</option>
+                            <option value="1">Hoạt động</option>
+                            <option value="0">Bị khóa</option>
+                        </select>
+                    </div>
+                    <div class="admin-control-center">
+                        <form action="" class="form-search">
+                            <span class="search-btn"><i class="fa-light fa-magnifying-glass"></i></span>
+                            <input id="form-search-user" type="text" class="form-search-input"
+                                placeholder="Tìm kiếm mã khách hàng, tên khách hàng..." >
+                        </form>
+                    </div>
+                    <div class="admin-control-right">
+                        <form action="" class="fillter-date">
+                            <div>
+                                <label for="time-start">Từ</label>
+                                <input type="date" class="form-control-date" id="time-start-user" value="2024-03-30">
+                            </div>
+                            <div>
+                                <label for="time-end">Đến</label>
+                                <input type="date" class="form-control-date" id="time-end-user" value="2024-12-29">
+                            </div>
+                        </form>
+                        <button class="btn-reset-order" ><i
+                                class="fa-light fa-arrow-rotate-right"></i></button>
+                        <a href="newkhachhang.html"><button id="btn-add-user" class="btn-control-large" ><i
+                                class="fa-light fa-plus"></i> <span>Thêm khách hàng</span></button></a>
+                    </div>
+                </div>
+                <div class="table">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <td>MÃ KH</td>
+                                <td>Họ và tên</td>
+                                <td>Liên hệ</td>
+                                <td>Ngày tham gia</td>
+                                <td>Tình trạng</td>
+                                <td>Thao tác</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody id="show-user">
+                            <tr>
+                                <td>KH001</td>
+                                <td>Hữu Bình</td>
+                                <td>0908123456</td>
+                                <td>13/04/2024</td>
+                                <td><span class="status-no-complete">Bị khóa</span></td>
+                                <td class="control control-table">
+                                <a href="changekhachhang1.html"><button class="btn-edit" id="edit-account"  >
+                                    <i class="fa-light fa-pen-to-square"></i></button></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KH002</td>
+
+                                <td>Huỳnh Thành</td>
+                                <td>0703531125</td>
+                                <td>24/05/2024</td>
+                                <td><span class="status-complete">Hoạt động</span></td>
+
+                                <td class="control control-table">
+                                    <a href="changekhachhang2.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>KH003</td>
+
+                                <td>Nhật Tiến</td>
+                                <td>0902123876</td>
+                                <td>30/5/2024</td>
+                                <td><span class="status-complete">Hoạt động</span></td>
+
+                                <td class="control control-table">
+                                    <a href="changekhachhang3.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>KH004</td>
+
+                                <td>Nguyễn Minh</td>
+                                <td>0945013132</td>
+                                <td>12/7/2024</td>
+                                <td><span class="status-complete">Hoạt động</span></td>
+
+                                <td class="control control-table">
+                                    <a href="changekhachhang4.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>KH005</td>
+
+                                <td>Đại Vinh Quang</td>
+                                <td>0298612378</td>
+                                <td>19/9/2024</td>
+                                <td><span class="status-no-complete">Bị khóa</span></td>
+                                <td class="control control-table">
+                                    <a href="changekhachhang5.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>KH006</td>
+
+                                <td>Nguyễn Văn A</td>
+                                <td>0902318957</td>
+                                <td>28/10/2024</td>
+                                <td><span class="status-complete">Hoạt động</span></td>
+                                <td class="control control-table">
+                                    <a href="changekhachhang6.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>KH007</td>
+
+                                <td>Trần Thị C</td>
+                                <td>0707447745</td>
+                                <td>19/11/2024</td>
+                                <td><span class="status-complete">Hoạt động</span></td>
+                                <td class="control control-table">
+                                    <a href="changekhachhang7.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>KH008</td>
+
+                                <td>Nguyễn Thị Bánh Bèo</td>
+                                <td>0908448833</td>
+                                <td>20/12/2024</td>
+                                <td><span class="status-complete">Hoạt động</span></td>
+                                <td class="control control-table">
+                                    <a href="changekhachhang8.html"><button class="btn-edit" id="edit-account"  >
+                                        <i class="fa-light fa-pen-to-square"></i></button></a>
+                                    </td>
+                            </tr>
+                        
+
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <!-- </div> -->
+            </div>
+            
+        </main>
+    </div>
+    <div class="modal signup open">
+        <div class="modal-container">
+            <h3 class="modal-container-title add-account-e">CHỈNH SỬA KHÁCH HÀNG</h3>
+            <a href="khachhang.html"><button class="modal-close"><i class="fa-regular fa-xmark"></i>
+            </button></a>
+            <div class="form-content sign-up">
+                <form action="" class="signup-form">
+                    <div class="form-group">
+                        <label for="fullname" class="form-label">Tên đầy đủ</label>
+                        <input id="fullname" name="fullname" type="text" placeholder="VD: Nguyễn Văn A"
+                            class="form-control" value="Nguyễn Văn A">
+                        <span class="form-message-name form-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Số điện thoại</label>
+                        <input id="phone" name="phone" type="text" placeholder="Nhập số điện thoại"
+                            class="form-control" value="0902318957">
+                        <span class="form-message-phone form-message"> </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Mật khẩu</label>
+                        <input id="password" name="password" type="text" placeholder="Nhập mật khẩu"
+                            class="form-control">
+                        <span class="form-message-password form-message"></span>
+                    </div>
+                    <div class="form-group edit-account-e">
+                        <label for="" class="form-label">Trạng thái</label>
+                        <input type="checkbox" id="user-status" class="switch-input">
+                        <label for="user-status" class="switch"></label>
+                    </div>
+                    <button class="form-submit add-account-e" id="change-signup-button">Chỉnh Sửa</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
+  
+</body>
+
+</html>

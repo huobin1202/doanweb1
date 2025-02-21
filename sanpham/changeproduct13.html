@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='img/logo.png' rel='icon' type='image/x-icon' />
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link href="../assets/font/font-awesome-pro-v6-6.2.0/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../assets/css/admin-responsive.css">
+    <title>Quản lý cửa hàng</title>
+</head>
+
+<body>
+    <header class="header">
+        <button class="menu-icon-btn">
+            <div class="menu-icon">
+                <i class="fa-regular fa-bars"></i>
+            </div>
+        </button>
+    </header>
+    <div class="container">
+        <aside class="sidebar open">
+            <div class="top-sidebar">
+                <a href="" class="channel-logo"><img src="../img/logo.png" alt="Channel Logo"></a>
+                <div class="hidden-sidebar your-channel"><img src="" style="height: 30px;" alt="">
+                </div>
+            </div>
+            <div class="middle-sidebar">
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/admin.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-house"></i></div>
+                            <div class="hidden-sidebar">Trang tổng quan</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content active">
+                        <a href="/sanpham/sanpham.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-thin fa-motorcycle"></i></div>
+                            <div class="hidden-sidebar">Sản phẩm</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/khachhang/khachhang.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-users"></i></div>
+                            <div class="hidden-sidebar">Khách hàng</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/donhang/donhang.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-basket-shopping"></i></div>
+                            <div class="hidden-sidebar">Đơn hàng</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/thongkesp/thongke.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-chart-simple"></i></div>
+                            <div class="hidden-sidebar">Thống kê sản phẩm</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item tab-content">
+                        <a href="/thongkekh/thongkekh.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-chart-simple"></i></div>
+                            <div class="hidden-sidebar">Thống kê khách hàng</div>
+                        </a>
+                    </li>
+
+                    <div class="spacer" style="height:50px;width:1px"></div>
+                    <li class="sidebar-list-item user-logout" style="border-top: 2px solid rgba(0,0,0,0.12);">
+                        <a href="index.html" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-thin fa-circle-chevron-left"></i></div>
+                            <div class="hidden-sidebar">Trang chủ</div>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-list-item user-logout">
+                        <a href="#" class="sidebar-link">
+                            <div class="sidebar-icon"><i class="fa-light fa-circle-user"></i></div>
+                            <div class="hidden-sidebar" id="name-acc">Admin</div>
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item user-logout">
+                        <a href="#" class="sidebar-link" >
+                            <div class="sidebar-icon"><i class="fa-light fa-arrow-right-from-bracket"></i></div>
+                            <div class="hidden-sidebar" id="logoutacc">Đăng xuất</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </aside>
+        <main class="content">
+            <!-- Product  -->
+            <div class="section product-all">
+                <div class="admin-control">
+                    <div class="admin-control-left">
+                        <select name="the-loai" id="the-loai" >
+                            <option>Tất cả</option>
+                            <option>Dòng Ninja</option>
+                            <option>Dòng Z</option>
+                            <option>Dòng KLX </option>
+                        </select>
+                    </div>
+                    <div class="admin-control-center">
+                        <form action="" class="form-search">
+                            <span class="search-btn"><i class="fa-light fa-magnifying-glass"></i></span>
+                            <input id="form-search-product" type="text" class="form-search-input"
+                                placeholder="Tìm kiếm tên xe..." >
+                        </form>
+                    </div>
+                    <div class="admin-control-right">
+                        <button class="btn-control-large" id="btn-cancel-product" ><i
+                                class="fa-light fa-rotate-right"></i> Làm mới</button>
+                        <a href="newproduct.html"><button class="btn-control-large" id="btn-add-product"><i class="fa-light fa-plus"></i> Thêm xe
+                            mới</button></a>
+                    </div>
+                </div>
+                <div id="show-product"></div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/ninja-650.png" alt="">
+                        <div class="list-info">
+                            <h4>NINJA® 650</h4>
+                            <p class="list-note">NINJA® 650 là mẫu xe thể thao mạnh mẽ với thiết kế hiện đại và động cơ ấn tượng.</p>
+                            <span class="list-category">Dòng Ninja</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">210.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct1.html"> <button class="btn-edit" ><i
+                                        class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete" ><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/ninja-1000sx.png" alt="">
+                        <div class="list-info">
+                            <h4>NINJA® 1000SX</h4>
+                            <p class="list-note">NINJA® 1000SX là một chiếc xe hoàn hảo cho những ai yêu thích sự mạnh mẽ và sang trọng.</p>
+                            <span class="list-category">Dòng Ninja</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">330.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct2.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/ninja-zx4r.png" alt="">
+                        <div class="list-info">
+                            <h4>NINJA® ZX™-4R</h4>
+                            <p class="list-note">Xe mô tô thể thao Ninja ZX-4R với động cơ 4 xi-lanh, công suất mạnh mẽ và thiết kế thể thao. Thích hợp cho những ai yêu thích tốc độ và sự ổn định trên mọi cung đường.</p>
+                            <span class="list-category">Dòng Ninja</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">150.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct3.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/ninja-h2r.png" alt="">
+                        <div class="list-info">
+                            <h4>NINJA H2®R</h4>
+                            <p class="list-note">NINJA H2®R là mẫu xe mô tô siêu mạnh mẽ với công nghệ tăng áp, mang đến hiệu suất và tốc độ ấn tượng, dành cho những người đam mê tốc độ và hiệu suất vượt trội.</p>
+                            <span class="list-category">Dòng Ninja</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">1.400.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct4.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/ninja-e1.png" alt="">
+                        <div class="list-info">
+                            <h4>NINJA® e-1</h4>
+                            <p class="list-note">NINJA® e-1 là mẫu xe điện thể thao hoàn toàn mới, kết hợp công nghệ tiên tiến và thiết kế mạnh mẽ.Phù hợp cho những ai muốn trải nghiệm tốc độ và sự bền bỉ của một chiếc xe điện cao cấp.</p>
+                            <span class="list-category">Dòng Ninja</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">490.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct5.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/z-h2.png" alt="">
+                        <div class="list-info">
+                            <h4>Z H2</h4>
+                            <p class="list-note">Z H2 là mẫu xe mạnh mẽ với động cơ siêu tăng áp, tăng tốc ấn tượng và hiệu suất cao, thiết kế độc đáo và công nghệ tiên tiến, lý tưởng cho những ai đam mê tốc độ.</p>
+                            <span class="list-category">Dòng Z</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">210.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct6.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/z125-pro.png" alt="">
+                        <div class="list-info">
+                            <h4>Z125 PRO</h4>
+                            <p class="list-note">Z125 PRO là mẫu xe côn tay thể thao nhỏ gọn, phù hợp cho việc di chuyển linh hoạt trong đô thị.Thiết kế mạnh mẽ, dễ điều khiển và tiết kiệm nhiên liệu, là lựa chọn tuyệt vời cho những ai yêu thích xe thể thao nhỏ.</p>
+                            <span class="list-category">Dòng Z</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">90.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct7.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/z500.png" alt="">
+                        <div class="list-info">
+                            <h4>Z500</h4>
+                            <p class="list-note">Z500 là một mẫu xe thể thao với động cơ mạnh mẽ với hiệu suất tuyệt vời và khả năng kiểm soát ấn tượng.Thiết kế sắc nét của nó phù hợp với cả người mới bắt đầu và người lái có kinh nghiệm.</p>
+                            <span class="list-category">Dòng Z</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">120.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct8.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/z650rs.png" alt="">
+                        <div class="list-info">
+                            <h4>Z650RS</h4>
+                            <p class="list-note">Z650RS là mẫu xe thể thao retro với động cơ mạnh mẽ và thiết kế cổ điển, mang lại trải nghiệm lái thú vị cho người dùng. Sự kết hợp hoàn hảo giữa hiện đại và truyền thống, thích hợp cho cả việc di chuyển trong thành phố và những chuyến đi dài.</p>
+                            <span class="list-category">Dòng Z</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">150.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct9.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/z7-hybrid.png" alt="">
+                        <div class="list-info">
+                            <h4>Z7 HYBRID</h4>
+                            <p class="list-note">Z7-HYBRID là mẫu xe thể thao mới kết hợp giữa động cơ xăng và điện, mang đến hiệu suất mạnh mẽ cùng khả năng tiết kiệm nhiên liệu vượt trội. Với thiết kế hiện đại, chiếc xe phù hợp cho những ai yêu thích công nghệ mới và muốn trải nghiệm cảm giác lái mượt mà, mạnh mẽ.</p>
+                            <span class="list-category">Dòng Z</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">670.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct10.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/klx-110r.png" alt="">
+                        <div class="list-info">
+                            <h4>KLX®110R</h4>
+                            <p class="list-note">KLX®110R là chiếc mô tô địa hình nhỏ gọn, lý tưởng cho người mới bắt đầu và các tay lái trẻ tuổi. Với thiết kế chắc chắn và động cơ mạnh mẽ, mang lại trải nghiệm lái xe thú vị và an toàn trên mọi địa hình.</p>
+                            <span class="list-category">Dòng KLX</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">50.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct11.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/klx-230.png" alt="">
+                        <div class="list-info">
+                            <h4>KLX®230</h4>
+                            <p class="list-note">KLX230 là mẫu xe địa hình tuyệt vời với động cơ mạnh mẽ và thiết kế hiện đại.Nó được trang bị các tính năng cao cấp cho trải nghiệm lái xe mượt mà và an toàn</p>
+                            <span class="list-category">Dòng KLX</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">30.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct12.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/klx-230r.png" alt="">
+                        <div class="list-info">
+                            <h4>KLX®230R</h4>
+                            <p class="list-note">KLX230R được thiết kế để mang lại hiệu suất mạnh mẽ và khả năng xử lý vượt trội trên các địa hình khó khăn.Chiếc xe này mang đến trải nghiệm lái tuyệt vời cho những người đam mê khám phá thiên nhiên.</p>
+                            <span class="list-category">Dòng KLX</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">65.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct13.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/klx-230sm.png" alt="">
+                        <div class="list-info">
+                            <h4>KLX®230SM</h4>
+                            <p class="list-note">KLX230SM là mẫu xe được thiết kế để mang lại sự kết hợp giữa khả năng vận hành mạnh mẽ trên đường phố và phong cách thể thao.</p>
+                            <span class="list-category">Dòng KLX</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">80.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct14.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/klx-300.png" alt="">
+                        <div class="list-info">
+                            <h4>KLX®300</h4>
+                            <p class="list-note">KLX300 là mẫu xe mô tô địa hình được thiết kế dành cho người đam mê off-road với động cơ mạnh mẽ, dễ vận hành và độ bền cao. Xe sở hữu khả năng vượt địa hình xuất sắc, hệ thống treo ưu việt và khung xe chắc chắn, phù hợp cho cả người mới bắt đầu và các tay đua chuyên nghiệp.</p>
+                            <span class="list-category">Dòng KLX</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">73.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct15.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-left">
+                        <img src="../img/klx-300sm.png" alt="">
+                        <div class="list-info">
+                            <h4>KLX®300SM</h4>
+                            <p class="list-note">KLX300SM là mẫu xe được thiết kế cho những tay lái yêu thích sự nhanh nhẹn và khả năng vận hành mạnh mẽ trên cả đường phố và địa hình nhẹ.Phiên bản KLX300SM này là sự kết hợp hoàn hảo giữa hiệu suất mạnh mẽ và sự tiện dụng trong việc di chuyển hàng ngày.</p>
+                            <span class="list-category">Dòng KLX</span>
+                        </div>
+                    </div>
+                    <div class="list-right">
+                        <div class="list-price">
+                            <span class="list-current-price">85.000.000đ</span>
+                        </div>
+                        <div class="list-control">
+                            <div class="list-tool">
+                                <a href="changeproduct16.html"> <button class="btn-edit" ><i
+                                    class="fa-light fa-pen-to-square"></i></button> </a>
+                                <button class="btn-delete"><i
+                                        class="fa-regular fa-trash" onclick="deleteProduct()"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div class="modal add-product open ">
+        <div class="modal-container">
+            <h3 class="modal-container-title add-product-e">CHỈNH SỬA SẢN PHẨM</h3>
+            <a href="sanpham.html"><button class="modal-close product-form"><i
+                        class="fa-regular fa-xmark"></i></button></a>
+            <div class="modal-content">
+                <form action="" class="add-product-form">
+                    <div class="modal-content-left">
+                        <img src="../img/klx-230r.png" alt="" class="upload-image-preview">
+                        <div class="form-group file">
+                            <label for="up-hinh-anh" class="form-label-file"><i
+                                    class="fa-regular fa-cloud-arrow-up"></i>Chọn hình ảnh</label>
+                            <input accept="image/jpeg, image/png, image/jpg" id="up-hinh-anh" name="up-hinh-anh"
+                                type="file" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-content-right">
+                        <div class="form-group">
+                            <label for="ten-mon" class="form-label">Tên xe</label>
+
+                            <input id="ten-mon" name="ten-mon" type="text" placeholder="Nhập tên xe" value="KLX230R"
+                                class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="category" class="form-label">Chọn dòng</label>
+                            <select name="category" id="chon-mon">
+                                <option>Dòng Ninja</option>
+                                <option>Dòng Z</option>
+                                <option>Dòng KLX</option>
+                            </select>
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="gia-moi" class="form-label">Mẫu xe</label>
+                            <input id="gia-moi" name="gia-moi" type="text" placeholder="Nhập mẫu xe"
+                                value="Mới 2023" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="gia-moi" class="form-label">Giá bán</label>
+                            <input id="gia-moi" name="gia-moi" type="text" placeholder="Nhập giá bán"
+                                value="210.000.000đ" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mo-ta" class="form-label">Thông tin sản phẩm</label>
+                            <textarea class="product-desc" id="mo-ta" placeholder="Nhập thông số của xe..."
+                                style="width:100%;height: 100%;">KLX230R được thiết kế để mang lại hiệu suất mạnh mẽ và khả năng xử lý vượt trội trên các địa hình khó khăn.Chiếc xe này mang đến trải nghiệm lái tuyệt vời cho những người đam mê khám phá thiên nhiên.</textarea>
+                            <span class="form-message"></span>
+                            <label for="mo-ta" class="form-label">Thông số kỹ thuật</label><br>
+                            <label for="mo-ta" class="form-label">*Động cơ*</label>
+                            <textarea class="product-desc" id="mo-ta" placeholder="Nhập thông số động cơ..."
+                                style="width:100%;height:185px;">
+- Loại: Động cơ 2 xy-lanh song song, làm mát bằng chất lỏng, DOHC, 8 van.
+- Dung tích: 649cc.
+- Công suất cực đại: Khoảng 67 mã lực (50,2 kW) tại 8.000 vòng/phút.
+- Mô-men xoắn cực đại: 64 Nm tại 6.700 vòng/phút.
+- Hệ thống nhiên liệu: Phun xăng điện tử (EFI).
+- Hộp số: 6 cấp.
+- Truyền động: Xích tải.</textarea>
+                            <span class="form-message"></span>
+                            <label for="mo-ta" class="form-label">*Kích thước & trọng lượng*</label>
+                            <textarea class="product-desc" id="mo-ta" placeholder="Nhập kích thước và trọng lượng..."
+                                style="width:100%;height:185px;">
+- Chiều dài x rộng x cao: 2.055 x 740 x 1.145 mm.
+- Chiều cao yên: 790 mm.
+- Khoảng sáng gầm xe: 130 mm.
+- Trọng lượng ướt: Khoảng 193 kg.
+- Dung tích bình xăng: 15 lít.</textarea>
+                            <span class="form-message"></span>
+                            <label for="mo-ta" class="form-label">*Khung gầm & hệ thống treo*</label>
+                            <textarea class="product-desc" id="mo-ta" placeholder="Nhập Khung gầm và hệ thống treo..."
+                                style="width:100%;height:185px;">
+- Khung xe: Khung thép dạng lưới nhẹ và cứng.
+- Hệ thống treo trước: Phuộc ống lồng 41mm.
+- Hệ thống treo sau: Mono-shock với khả năng điều chỉnh tải trọng trước.
+- Phanh trước: Đĩa đôi 300mm, kẹp phanh Nissin.
+- Phanh sau: Đĩa đơn 220mm.
+- ABS: Hệ thống chống bó cứng phanh (tiêu chuẩn trên các phiên bản gần đây).
+</textarea>
+
+                            
+
+                        </div>
+
+
+                        <button class="form-submit btn-add-product-form add-product-e" id="change-product-button">
+                            <i class="fa-regular fa-plus"></i>
+                            <span>CHỈNH SỬA XE</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <script src="../assets/js/admin.js"></script>
+</body>
+
+</html>
