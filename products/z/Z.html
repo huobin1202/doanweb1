@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css ">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../../css/reset.css ">
+    <link rel="stylesheet" href="../../css/app.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./assets/font/font-awesome-pro-v6-6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/font/font-awesome-pro-v6-6.2.0/css/all.min.css">
     <script src="https://fontawesome.com/v6/search" crossorigin="anonymous"></script>
     <title>BMT </title>
 </head>
@@ -22,7 +22,7 @@
                 <div class="header-middle-left">
                     <div class="header-logo">
                         <a href="" id="logo">
-                            <img src="image/logo.png" alt="BMT">
+                            <img src="../../image/logo.png" alt="BMT">
                         </a>
 
                     </div>
@@ -30,7 +30,7 @@
                 <div class="header-middle-center">
                     <form action="" class="form-search">
                         <span class="search-btn">
-                            <a href="timthay.html">
+                            <a href="../../pages/timthay.html">
                                 <i class="fa-light fa-magnifying-glass"></i>
                             </a>
                         </span>
@@ -51,16 +51,16 @@
 
                                 <div class="user-info">
                                     <h1 class="welcome"> <span id="userDisplayName"></span></h1>
-                                    <a href="dk.html"><button class="logout-btn" onclick="logout()"
+                                    <a href="../../pages/dk.html"><button class="logout-btn" onclick="logout()"
                                             style="font-size: 17px;">Đăng xuất</button></a>
                                 </div>
 
                                 <div class="hoadon">
                                     <span class="ravao">Giỏ hàng</span>
-                                    <a href="hoadon.html">
+                                    <a href="../../pages/hoadon.html">
                                         <div class="hd">Hóa đơn</div>
                                     </a>
-                                    <a href="admin.html">
+                                    <a href="../../admin.html">
                                         <div class="hd">Quan ly</div>
                                     </a>
 
@@ -87,7 +87,7 @@
                 <input type="number" placeholder="tối thiểu" id="min-price" onchange="searchProducts()">
                 <span>đến</span>
                 <input type="number" placeholder="tối đa" id="max-price" onchange="searchProducts()">
-                <button id="advanced-search-price-btn"><a href="timthay2.html"><i class="fa-light fa-magnifying-glass-dollar"></i></a></button>
+                <button id="advanced-search-price-btn"><a href="../../pages/timthay2.html"><i class="fa-light fa-magnifying-glass-dollar"></i></a></button>
             </div>
             <div class="advanced-search-control">
                 <button id="sort-ascending" onclick="searchProducts(1)"><i
@@ -105,18 +105,18 @@
         <nav class="header-bottom">
             <div class="container">
                 <ul class="menu-list">
-                    <li class="menu-list-item"><a href="index.html" class="menu-link">Trang chủ</a></li>
+                    <li class="menu-list-item"><a href="../../index.html" class="menu-link">Trang chủ</a></li>
                 
                     <div class="dropdown">
                         <span>Sản phẩm</span>
                         <div class="dropdown-content">
-                            <li class="menu-list-item"><a href="NINJA.html" class="menu-link">Dòng Ninja</a></li>
+                            <li class="menu-list-item"><a href="../ninja/NINJA.html" class="menu-link">Dòng Ninja</a></li>
                             <li class="menu-list-item"><a href="Z.html" class="menu-link">Dòng Z</a></li>
-                            <li class="menu-list-item"><a href="KLX.html" class="menu-link">Dòng KLX</a></li>
+                            <li class="menu-list-item"><a href="../klx/KLX.html" class="menu-link">Dòng KLX</a></li>
                         </div>
                     </div>
-                    <li class="menu-list-item"><a href="index.html" class="menu-link">Tin tức </a></li>
-                    <li class="menu-list-item"><a href="index.html" class="menu-link">Điều khoản</a></li>
+                    <li class="menu-list-item"><a href="../../index.html" class="menu-link">Tin tức </a></li>
+                    <li class="menu-list-item"><a href="../../index.html" class="menu-link">Điều khoản</a></li>
 
                 </ul>
             </div>
@@ -127,22 +127,22 @@
         <div class="slideshow-container">
             <div class="mySlides fade">
 
-                <img src="image/web1.jpg">
+                <img src="../../image/web1.jpg">
 
             </div>
             <div class="mySlides fade">
 
-                <img src="image/web2.jpg">
+                <img src="../../image/web2.jpg">
 
             </div>
             <div class="mySlides fade">
 
-                <img src="image/web3.png">
+                <img src="../../image/web3.png">
 
             </div>
             <div class="mySlides fade">
 
-                <img src="image/web4.jpg">
+                <img src="../../image/web4.jpg">
 
             </div>
             <div class="dot-wrapper">
@@ -208,79 +208,71 @@
                     <div class="grid-container" id="product-list">
                         <!-- Page 1 Products -->
 
-                       
-
-                        <div class="card page-2" id="invoiceModal">
-                            <a href="klx110r.html">
-                                <img src="image/klx-110r.png" alt="Z 500"></a>
-                            <h4>2023</h4>
-                            <h3>KLX®110R</h3>
-                            <div class="greenSpacer"></div>
-                            <div class="price"> 50.000.000đ</div>
-                            <button class="mua" onclick="addToCart('KLX®110R', 50000000, 'image/klx-110r.png')">Thêm vào
-                                giỏ hàng </button>
-                        </div>
-
-                        <div class="card page-2" id="invoiceModal">
-                            <a href="klx230.html">
-                                <img src="image/klx-230.png" alt="Z 500"></a>
-                            <h4>2021</h4>
-                            <h3>KLX®230</h3>
-                            <div class="greenSpacer"></div>
-                            <div class="price">30.000.000đ</div>
-                            <button class="mua" onclick="addToCart('KLX®230', 30000000, 'image/klx-230.png')">Thêm vào
-                                giỏ hàng </button>
-                        </div>
-                        <!-- Page 3 Products -->
-                        <div class="card page-3" id="invoiceModal">
-                            <a href="klx230r.html">
-                                <img src="image/klx-230r.png" alt="KLX 110 R"></a>
+                      
+                        <div class="card page-1" id="invoiceModal">
+                            <a href="zh2.html">
+                                <img src="../../image/z-h2.png" alt="KLX 110 R"></a>
                             <h4>MỚI 2022</h4>
-
-                            <h3>KLX®230R</h3>
-
+                            <h3>Z H2</h3>
                             <div class="greenSpacer"></div>
-                            <div class="price">65.000.000đ</div>
-                            <button class="mua" onclick="addToCart('KLX®230R', 65000000, 'image/klx-230r.png')">Thêm vào
-                                giỏ hàng </button>
-                        </div>
-                        <div class="card page-3">
-                            <a href="klx230sm.html">
-                                <img src="image/klx-230sm.png" alt="KLX 110 R"></a>
-                            <h4>MỚI 2023</h4>
-                            <h3>KLX®230SM</h3>
-                            <div class="greenSpacer"></div>
-                            <div class="price"> 80.000.000đ</div>
-                            <button class="mua" onclick="addToCart('KLX®230SM', 80000000, 'image/klx-230sm.png')">Thêm
-                                vào giỏ hàng </button>
+
+                            <div class="price">210.000.000đ</div>
+                            <button class="mua" onclick="addToCart('Z H2', 210000000, '../../image/z-h2.png')">Thêm vào giỏ
+                                hàng </button>
                         </div>
 
-                        <div class="card page-3">
-                            <a href="klx300.html">
-                                <img src="image/klx-300.png" alt="KLX 110 R" href="klx300.html"></a>
-                            <h4>2022</h4>
-                            <h3>KLX®300</h3>
+                        <!-- Page 2 Products -->
+                        <div class="card page-2" id="invoiceModal">
+                            <a href="z125.html">
+                                <img src="../../image/z125-pro.png" alt="Z 500"></a>
+                            <h4>2021</h4>
+                            <h3>Z125 PRO</h3>
                             <div class="greenSpacer"></div>
 
-                            <div class="price"> 73.000.000đ</div>
-                            <button class="mua" onclick="addToCart('KLX®300', 73000000, 'image/klx-300.png')">Thêm vào
+                            <div class="price">90.000.000đ</div>
+                            <button class="mua" onclick="addToCart('Z125 PRO', 90000000, '../../image/z125-pro.png')">Thêm vào
                                 giỏ hàng </button>
                         </div>
 
-                        <div class="card page-3" id="invoiceModal">
-                            <a href="klx300sm.html"><img src="image/klx-300sm.png" alt="KLX 110 R"></a>
+                        <div class="card page-2" id="invoiceModal">
+                            <a href="z500.html">
+                                <img src="../../image/z500.png" alt="Z 500"></a>
                             <h4>2023</h4>
-                            <h3>KLX®300SM</h3>
+                            <h3>Z500</h3>
                             <div class="greenSpacer"></div>
 
-                            <div class="price"> 85.000.000đ</div>
-                            <button class="mua" onclick="addToCart('KLX®300SM', 85000000, 'image/klx-300sm.png')">Thêm
-                                vào giỏ hàng </button>
+                            <div class="price"> 120.000.000đ</div>
+                            <button class="mua" onclick="addToCart('Z500', 120000000, '../../image/z500.png')">Thêm vào giỏ
+                                hàng </button>
                         </div>
 
-                    </div>
-                    </tbody>
-                  
+
+                        <div class="card page-2" id="invoiceModal">
+                            <a href="z650rs.html">
+                                <img src="../../image/z650rs.png" alt="Z 500"></a>
+                            <h4>MỚI 2023</h4>
+                            <h3>Z650RS</h3>
+                            <div class="greenSpacer"></div>
+
+                            <div class="price"> 150.000.000đ</div>
+                            <button class="mua" onclick="addToCart('Z650RS', 150000000, '../../image/z650rs.png')">Thêm vào
+                                giỏ hàng </button>
+                        </div>
+
+
+                        <div class="card page-2" id="invoiceModal">
+                            <a href="z7.html">
+                                <img src="../../image/z7-hybrid.png" alt="Z 500"></a>
+                            <h4>HOÀN TOÀN MỚI 2024</h4>
+                            <h3>Z7 HYBRID</h3>
+                            <div class="greenSpacer"></div>
+
+                            <div class="price"> 670.000.000đ</div>
+                            <button class="mua" onclick="addToCart('Z7 HYBRID', 670000000, '../../image/z7-hybrid.png')">Thêm
+                                vào giỏ hàng </button>
+                        </div>
+                        
+                    
                 </ul>
             </div>
         </div>
@@ -315,7 +307,7 @@
                 <p style=" font-weight: bold;margin-top: 10px; margin-bottom: 20px;">Tổng tiền:<span>0</span><sup></sup>
                 </p>
             </div>
-            <a class="thanhtoan" href="thanhtoan.html">Thanh toán</a>
+            <a class="thanhtoan" href="../../pages/thanhtoan.html">Thanh toán</a>
         </form>
     </section>
 
@@ -506,7 +498,7 @@
             document.getElementById('userDisplayName').textContent = loggedInUser;
         } else {
             // Nếu không có người dùng, chuyển hướng về trang đăng nhập
-            window.location.href = 'dk.html';
+            window.location.href = '../../pages/dk.html';
         }
 
         // Hàm đăng xuất
@@ -515,14 +507,14 @@
             localStorage.removeItem('loggedInUser');
 
             // Chuyển hướng về trang đăng nhập
-            window.location.href = 'index.html';
+            window.location.href = '../../index.html';
         }
     </script>
     <!-- <script src="js/hoadon.js"></script> -->
-    <script src="js/giohang.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/searchProducts.js"></script>
-    <script src="js/ssbutton.js"></script>
+    <script src="../../js/giohang.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/searchProducts.js"></script>
+    <script src="../../js/ssbutton.js"></script>
 
 </body>
 
